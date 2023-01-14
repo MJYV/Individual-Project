@@ -22,15 +22,15 @@ export function search() {
 
   //Write your code here for the search function
 
-  return newsList;
+  return newsList.filter(
+    (element) => element.toLowerCase().indexOf(inputValue.toLowerCase()) > -1
+  );
 }
 
 export function sort(type) {
   if (type == "ascending") {
-    //Write your code here for sorting (ascending)
+    return newsList.sort((a, b) => (a < b ? -1 : 1));
   } else {
-    //Write your code here for sorting (descending)
+    return newsList.sort((a, b) => (a > b ? -1 : 1));
   }
-
-  return newsList;
 }
